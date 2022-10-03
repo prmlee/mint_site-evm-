@@ -89,7 +89,7 @@ const Mint = () => {
         isMintOpen();
       }
     }, 2000);
-    // eslint-disable-next-line prettier/prettier
+    // eslint-disable-next-line
   }, [active]);
 
   return (
