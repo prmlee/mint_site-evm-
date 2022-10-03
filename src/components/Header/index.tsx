@@ -5,7 +5,7 @@ import { DEFAULT_NETWORK, networkInfo } from '../../constant';
 import { InjectedConnector } from '@web3-react/injected-connector';
 
 const Header = () => {
-  const { error, activate, active, account, connector } = useWeb3React();
+  const { error, activate, account } = useWeb3React();
   const [wrongNetwork, setWrongNetwork] = useState<boolean>(false);
   const isUnsupportedChainIdError = error instanceof UnsupportedChainIdError;
 
