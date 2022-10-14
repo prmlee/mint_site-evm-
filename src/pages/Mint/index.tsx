@@ -77,7 +77,11 @@ const Mint = () => {
         toast.error('Wallet is not connected');
       }
     } catch (error: any) {
-      toast.error('You exceeded maximum number in your wallet.');
+      const code = error.data ? error.data.code : error.error.data.code;
+      if (code === -32000) toast.error('Insufficient Fund');
+      else if (code === 3)
+        toast.error('You exceeded maximum number in your wallet.');
+      else toast.error('Eorror happened');
       setLoading(false);
     }
   };
@@ -89,7 +93,6 @@ const Mint = () => {
         isMintOpen();
       }
     }, 2000);
-    // eslint-disable-next-line
   }, [active]);
 
   return (

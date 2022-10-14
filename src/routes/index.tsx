@@ -1,16 +1,18 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Header from '../components/Header';
-import Mint from '../pages/Mint';
+import { useEffect } from "react"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Header from "../components/Header";
+import Mint from "../pages/Mint";
 
-const Router = () => {
+const Router = () =>
+{ 
   return (
     <BrowserRouter>
-      <Header />
+      <Header/>
       <Routes>
-        <Route path="/" element={<Mint />} />
+        <Route path="/" element={ <Mint/>} />
       </Routes>
     </BrowserRouter>
-  );
-};
+  )
+}
 
 export default Router;

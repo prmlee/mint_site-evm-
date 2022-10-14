@@ -3,6 +3,7 @@ import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core';
 import { chainIdToHexString, shortenAddr } from '../../utils/web3';
 import { DEFAULT_NETWORK, networkInfo } from '../../constant';
 import { InjectedConnector } from '@web3-react/injected-connector';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const { error, activate, account } = useWeb3React();
@@ -70,6 +71,14 @@ const Header = () => {
   return (
     <div className="flex justify-between items-center pt-6 px-20">
       <img src="images/logo.jpg" alt="Logo" className="w-1/5" />
+      <div className="flex flex-row justify-center items-center">
+        <span className="pr-10 cursor-pointer">
+          <a href="https://basicisland.io/">Website</a>
+        </span>
+        <span className="cursor-pointer">
+          <Link to="/">Mint</Link>
+        </span>
+      </div>
       <button
         type="button"
         className="border-4 border-yellow-heavy rounded-2xl p-4"
